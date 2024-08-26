@@ -1,14 +1,17 @@
-class AnalizeProduseVanzari {
+class AnalizeProduseVanzari 
+{
     constructor() {
         this.actiuni = [];
         this.topuri = [];
     }
 
-    adaugaActiune(actiune) {
+    adaugaActiune(actiune) 
+    {
         this.actiuni.push(actiune);
     }
 
-    agregeazaDate() {
+    agregeazaDate() 
+    {
         const dateAgregate = {};
 
         this.actiuni.forEach(actiune => {
@@ -55,7 +58,8 @@ class AnalizeProduseVanzari {
         }
     }
 
-    obtineSaptamana(d) {
+    obtineSaptamana(d)
+     {
         d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
         d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
         const inceputAn = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
@@ -83,36 +87,36 @@ class AnalizeProduseVanzari {
         }
     }
 
-    obtineEvolutie(top) {
-        // Această metodă ar trebui să compare cu perioada anterioară
-        // Pentru simplificare, vom returna o evoluție aleatorie
+    obtineEvolutie(top) 
+    {
+        
         const evolutii = ['în creștere', 'în scădere', 'stagnare'];
         return evolutii[Math.floor(Math.random() * evolutii.length)];
     }
 }
 
-// Exemplu de utilizare
+
 const analize = new AnalizeProduseVanzari();
 
-// Adăugăm câteva acțiuni
-analize.adaugaActiune({
+analize.adaugaActiune(
+    {
     id: 1,
     tip: 'vanzare',
     valoare: '10',
-    timp: '2022-10-01 12:12:23',
+    timp: '2024-08-01 12:12:23',
     prod: 123
-});
+}
+);
 
 analize.adaugaActiune({
     id: 2,
     tip: 'apreciere',
     valoare: '2',
-    timp: '2022-10-01 12:12:23',
+    timp: '2024-08-10 12:12:23',
     prod: 123
 });
 
-// Agregăm datele
+
 analize.agregeazaDate();
 
-// Afișăm topurile
 analize.afiseazaTopuri();
