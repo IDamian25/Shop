@@ -1,0 +1,1 @@
+A JavaScript program that processes a list of actions for an online store. Each action represents a visit, a sale, or a "like" on a product, including details such as the product ID, action type, value, and date:
